@@ -44,7 +44,7 @@ private int hashMul (int indexR) {
     return result;
 }
 
-public void search(String key, String name, String state) {
+public void searchDiv(String key, String name, String city) {
     int ref = this.Ascii(key);
     int freeSpace = this.hashMul(ref);
 
@@ -53,9 +53,32 @@ public void search(String key, String name, String state) {
             if(i == freeSpace){
                 for(int j=0; j<this.LinkedList[i].size(); j++){
                     Node findNode = this.LinkedList[i].getElementAt(j);
-                    if(findNode.getBusiness().getName().equals(name) && findNode.getBusiness().getState().equals(state)){
+                    if(findNode.getBusiness().getName().equals(name) && findNode.getBusiness().getCity().equals(city)){
                         System.out.println("The index is: " + i + " with the position in the linked list: " + j );
-                        System.out.println("The value was found, using the multiplication function: " + findNode.getBusiness().toString());
+                        System.out.println("");
+                        System.out.println("The value was found, using the division function: " + findNode.getBusiness().toString());
+                        System.out.println("");
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public void searchMul(String key, String name, String state) {
+        int ref = this.Ascii(key);
+        int freeSpace = this.hashMul(ref);
+
+        for(int i=0; i<this.LinkedList.length; i++){
+            if(this.LinkedList[i] != null) {
+                if(i == freeSpace){
+                    for(int j=0; j<this.LinkedList[i].size(); j++){
+                        Node findNode = this.LinkedList[i].getElementAt(j);
+                        if(findNode.getBusiness().getName().equals(name) && findNode.getBusiness().getState().equals(state)){
+                            System.out.println("The index is: " + i + " with the position in the linked list: " + j );
+                            System.out.println("");
+                            System.out.println("The value was found, using the multiplication function: " + findNode.getBusiness().toString());
+                            System.out.println("");
                         }
                     }
                 }
